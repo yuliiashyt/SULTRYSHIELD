@@ -1,0 +1,31 @@
+{
+  "skill_name": "sultry-identics",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "ig-launch-post",
+      "prompt": "напиши текст для Instagram-посту про запуск рукавичок Sultry Shield і коротко опиши, яким має бути візуал до посту (фото/кольори/графіка)",
+      "expected_output": "Ukrainian caption in the brand voice (informal «ти», sensual-caring, no medical/sport lexicon, no «королева»-style power words) plus a visual spec using the brand palette (espresso #16100D, silk #E8CBA8, caramel #C8956D, skin tones), warm candle-like light, macro touch photography; no white background or neon.",
+      "files": [],
+      "assertions": [
+        "Text is in Ukrainian and addresses the reader informally («ти»)",
+        "Copy contains none of the banned words: амортизація/амортизуюча, травмобезпечний, екіпіровка, спорядження, фіксація суглоба, королева, діва, богиня",
+        "Visual description uses the brand palette (espresso/dark-brown ground, caramel/silk accents or their hex codes) and warm low light; explicitly avoids or does not propose white background / neon",
+        "Emotional benefit (freedom, confidence, care for the body) appears before or instead of technical specs"
+      ]
+    },
+    {
+      "id": 1,
+      "eval_name": "promo-banner",
+      "prompt": "зроби html-банер (одну самодостатню html-сторінку) для акції «−15% на перше замовлення» для мого бренду Sultry Shield",
+      "expected_output": "Self-contained HTML banner in the brand identity: espresso-noir ground, silk/caramel accents, serif display type with possible italic accent, letter-spaced uppercase labels, soft CTA, Ukrainian copy, ideally the dotted-ellipse «шов захисту» motif or shield monogram.",
+      "files": [],
+      "assertions": [
+        "Page colors come from the brand palette (#16100D-family dark browns, #E8CBA8, #C8956D, skin tones); no pure #ffffff/#000000 surfaces, no neon or red discount color",
+        "Display typography is a serif (Cormorant Garamond/Georgia); small labels are uppercase with letter-spacing; headings are not bold sports sans",
+        "Copy is Ukrainian with a soft CTA (no «КУПУЙ ЗАРАЗ», no urgency pressure) and none of the banned words",
+        "Contains at least one brand marker: shield monogram, dotted-ellipse protection-seam motif, or an italic accent phrase"
+      ]
+    }
+  ]
+}
