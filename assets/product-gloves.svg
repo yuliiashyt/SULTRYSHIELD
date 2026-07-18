@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Рукавички Sultry Shield">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1114"/>
+      <stop offset="1" stop-color="#2a1b1f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#d9b899" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#d9b899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bg)"/>
+  <rect width="600" height="750" fill="url(#glow)"/>
+  <g fill="none" stroke="#d9b899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- long glove silhouette -->
+    <path d="M255 120 q-14 150 -10 260 q3 90 -12 150 q-10 42 5 78 q14 32 62 32 q48 0 60 -34 q12 -36 4 -80 q-12 -62 -8 -148 q5 -108 -8 -258"/>
+    <!-- fingers -->
+    <path d="M262 118 q6 -46 14 -52 q10 -6 12 8 l4 44"/>
+    <path d="M292 116 q2 -58 12 -62 q11 -3 11 12 l2 50"/>
+    <path d="M317 116 q4 -50 13 -52 q10 -2 9 12 l-3 42"/>
+    <path d="M339 122 q10 -34 18 -33 q9 2 4 18 l-10 32"/>
+    <!-- silicone band -->
+    <path d="M247 250 q56 22 106 0" stroke-dasharray="2 9" stroke-width="5"/>
+    <path d="M246 268 q57 22 108 0" stroke-dasharray="2 9" stroke-width="5"/>
+    <!-- padded palm zone -->
+    <ellipse cx="300" cy="176" rx="34" ry="42" stroke-opacity="0.7" stroke-dasharray="1 8" stroke-width="5"/>
+    <!-- padded elbow zone -->
+    <ellipse cx="292" cy="470" rx="36" ry="50" stroke-opacity="0.7" stroke-dasharray="1 8" stroke-width="5"/>
+  </g>
+  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#d9b899" opacity="0.9">РУКАВИЧКИ</text>
+  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8d7466">SULTRY SHIELD · G001</text>
+</svg>

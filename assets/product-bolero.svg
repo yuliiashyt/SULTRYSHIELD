@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Болеро Sultry Shield">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1114"/>
+      <stop offset="1" stop-color="#2a1b1f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#d9b899" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#d9b899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bg)"/>
+  <rect width="600" height="750" fill="url(#glow)"/>
+  <g fill="none" stroke="#d9b899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- bolero: cropped jacket with long sleeves -->
+    <path d="M300 190 q-52 -6 -78 24 q-24 28 -24 78 l0 92 q50 26 102 26 q52 0 102 -26 l0 -92 q0 -50 -24 -78 q-26 -30 -78 -24 z"/>
+    <!-- neckline -->
+    <path d="M258 196 q42 60 84 0"/>
+    <!-- left sleeve -->
+    <path d="M198 292 q-44 26 -56 92 q-10 56 6 112 q26 12 48 -2 q4 -66 14 -120"/>
+    <!-- right sleeve -->
+    <path d="M402 292 q44 26 56 92 q10 56 -6 112 q-26 12 -48 -2 q-4 -66 -14 -120"/>
+    <!-- cropped hem -->
+    <path d="M198 384 q102 52 204 0" stroke-opacity="0.6"/>
+    <!-- elbow pads on sleeves -->
+    <ellipse cx="165" cy="420" rx="20" ry="30" stroke-dasharray="1 8" stroke-width="5" stroke-opacity="0.8"/>
+    <ellipse cx="435" cy="420" rx="20" ry="30" stroke-dasharray="1 8" stroke-width="5" stroke-opacity="0.8"/>
+  </g>
+  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#d9b899" opacity="0.9">БОЛЕРО</text>
+  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8d7466">SULTRY SHIELD · B001</text>
+</svg>
