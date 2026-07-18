@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кошик — Sultry Shield</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.svg" alt="">
+      <span class="brand__name">Sultry Shield</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#catalog">Каталог</a>
+      <a href="index.html#about">Про бренд</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="cart-link" href="cart.html">
+      Кошик <span class="cart-link__badge is-empty" data-cart-count>0</span>
+    </a>
+  </div>
+</header>
+
+<div class="container page-title">
+  <h1>Кошик</h1>
+</div>
+
+<div class="container">
+  <div class="empty-state" id="cart-empty" hidden>
+    <h2>Кошик порожній</h2>
+    <p>Час це виправити — колекція Black&amp;Nude чекає.</p>
+    <a class="btn btn--primary" href="index.html#catalog">До каталогу</a>
+  </div>
+
+  <div class="cart-layout" id="checkout-block" hidden>
+    <div>
+      <div class="cart-items" id="cart-items"></div>
+    </div>
+
+    <aside class="checkout-card">
+      <h2>Оформлення</h2>
+      <div class="checkout-card__total">
+        <span>Разом</span>
+        <strong id="cart-total">0 грн</strong>
+      </div>
+
+      <form id="order-form">
+        <div class="form-field">
+          <label for="f-name">Ім'я та прізвище *</label>
+          <input id="f-name" name="name" required autocomplete="name" placeholder="Олена Коваленко">
+        </div>
+        <div class="form-field">
+          <label for="f-phone">Телефон *</label>
+          <input id="f-phone" name="phone" required type="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" pattern="[+0-9\s\(\)\-]{10,}">
+        </div>
+        <div class="form-field">
+          <label for="f-city">Місто *</label>
+          <input id="f-city" name="city" required placeholder="Київ">
+        </div>
+        <div class="form-field">
+          <label for="f-branch">Відділення Нової пошти *</label>
+          <input id="f-branch" name="branch" required placeholder="№ відділення або поштомату">
+        </div>
+        <div class="form-field">
+          <label for="f-instagram">Instagram (щоб звʼязатись швидше)</label>
+          <input id="f-instagram" name="instagram" placeholder="@nickname">
+        </div>
+        <div class="form-field">
+          <label>Оплата *</label>
+          <div class="radio-row">
+            <label><input type="radio" name="payment" value="Накладений платіж" checked> Накладений платіж при отриманні</label>
+            <label><input type="radio" name="payment" value="Оплата на картку"> Передплата на картку (реквізити надішлемо)</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-comment">Коментар</label>
+          <textarea id="f-comment" name="comment" rows="2" placeholder="Побажання до замовлення"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Оформити замовлення</button>
+        <p class="form-note">Після оформлення ми звʼяжемось з вами для підтвердження. Доставка Новою поштою за тарифами перевізника.</p>
+      </form>
+
+      <div class="notice" id="order-fallback" hidden>
+        <h3>Останній крок 💌</h3>
+        <p>Онлайн-приймання замовлень щойно налаштовується. Скопіюйте текст нижче і надішліть нам в Instagram — і замовлення у нас:</p>
+        <textarea id="order-fallback-text" readonly></textarea>
+        <button class="btn btn--ghost" type="button" id="copy-order">Скопіювати</button>
+        <a class="btn btn--primary" id="instagram-link" href="#" target="_blank" rel="noopener">Відкрити Instagram</a>
+      </div>
+
+      <div class="notice notice--error" id="order-error" hidden>
+        <h3>Не вдалося надіслати 😔</h3>
+        <p>Перевірте інтернет-зʼєднання і спробуйте ще раз, або напишіть нам в Instagram — приймемо замовлення вручну.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container site-footer__bottom" style="border-top:none;margin-top:0;padding-top:0">
+    <span>© 2026 Sultry Shield</span>
+    <a href="index.html">На головну</a>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

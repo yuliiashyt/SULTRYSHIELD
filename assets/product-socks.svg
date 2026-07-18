@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Шкарпетки Sultry Shield">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1114"/>
+      <stop offset="1" stop-color="#2a1b1f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#d9b899" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#d9b899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bg)"/>
+  <rect width="600" height="750" fill="url(#glow)"/>
+  <g fill="none" stroke="#d9b899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- sock silhouette -->
+    <path d="M245 150 l0 210 q0 40 -28 66 q-34 30 -22 70 q12 42 62 44 q46 2 90 -30 q46 -34 44 -74 q-2 -36 -40 -44 q-26 -6 -26 -36 l0 -206"/>
+    <!-- cuff -->
+    <path d="M245 150 q40 18 80 0" />
+    <path d="M245 172 q40 18 80 0" stroke-opacity="0.6"/>
+    <!-- padded lacing-zone insert -->
+    <path d="M245 210 q40 18 80 0 l0 66 q-40 18 -80 0 z" stroke-dasharray="1 8" stroke-width="5" stroke-opacity="0.8"/>
+    <!-- heel accent -->
+    <path d="M236 448 q-16 22 2 40" stroke-opacity="0.6"/>
+  </g>
+  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#d9b899" opacity="0.9">ШКАРПЕТКИ</text>
+  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8d7466">SULTRY SHIELD · S001</text>
+</svg>

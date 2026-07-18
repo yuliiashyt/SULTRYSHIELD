@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — Sultry Shield</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.svg" alt="">
+      <span class="brand__name">Sultry Shield</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#catalog">Каталог</a>
+      <a href="index.html#about">Про бренд</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="cart-link" href="cart.html">
+      Кошик <span class="cart-link__badge is-empty" data-cart-count>0</span>
+    </a>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="breadcrumbs"><a href="index.html">Головна</a> / <a href="index.html#catalog">Каталог</a> / <span id="crumb-name"></span></nav>
+
+  <div class="product-layout" id="product-layout" hidden>
+    <div class="product-layout__img">
+      <img id="p-image" src="" alt="">
+    </div>
+    <div class="product-info">
+      <h1 id="p-name"></h1>
+      <p class="product-info__sku" id="p-sku"></p>
+      <p class="product-info__price" id="p-price"></p>
+      <p class="product-info__desc" id="p-desc"></p>
+
+      <div class="option-group">
+        <span class="option-group__label">Розмір</span>
+        <div class="option-pills" id="p-sizes"></div>
+      </div>
+      <div class="option-group">
+        <span class="option-group__label">Колір</span>
+        <div class="option-pills" id="p-colors"></div>
+      </div>
+      <div class="option-group">
+        <span class="option-group__label">Кількість</span>
+        <div class="qty-picker">
+          <button type="button" id="qty-minus" aria-label="Менше">−</button>
+          <span id="qty-value">1</span>
+          <button type="button" id="qty-plus" aria-label="Більше">+</button>
+        </div>
+      </div>
+
+      <div class="product-actions">
+        <button class="btn btn--primary" id="add-to-cart">Додати в кошик</button>
+        <a class="btn btn--ghost" href="cart.html">Перейти в кошик</a>
+      </div>
+      <p class="added-note" id="added-note" hidden>Додано в кошик ✓</p>
+
+      <ul class="feature-list" id="p-features"></ul>
+    </div>
+  </div>
+
+  <div class="empty-state" id="not-found" hidden>
+    <h2>Товар не знайдено</h2>
+    <p>Схоже, такого товару немає в каталозі.</p>
+    <a class="btn btn--primary" href="index.html#catalog">До каталогу</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container site-footer__bottom" style="border-top:none;margin-top:0;padding-top:0">
+    <span>© 2026 Sultry Shield</span>
+    <a href="index.html">На головну</a>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const product = getProduct(params.get("id"));
+  let selectedSize = null;
+  let selectedColor = null;
+  let qty = 1;
+
+  if (!product) {
+    document.getElementById("not-found").hidden = false;
+  } else {
+    document.title = product.name + " — Sultry Shield";
+    document.getElementById("product-layout").hidden = false;
+    document.getElementById("crumb-name").textContent = product.name;
+    document.getElementById("p-image").src = product.image;
+    document.getElementById("p-image").alt = product.name;
+    document.getElementById("p-name").textContent = product.name;
+    document.getElementById("p-sku").textContent = "Артикул " + product.sku;
+    document.getElementById("p-price").textContent = formatPrice(product.price);
+    document.getElementById("p-desc").textContent = product.description;
+    document.getElementById("p-features").innerHTML =
+      product.features.map(f => `<li>${f}</li>`).join("");
+
+    function renderPills(containerId, values, onPick) {
+      const box = document.getElementById(containerId);
+      box.innerHTML = values.map(v => `<button type="button" class="option-pill" data-v="${v}">${v}</button>`).join("");
+      box.querySelectorAll(".option-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          box.querySelectorAll(".option-pill").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          onPick(btn.dataset.v);
+        });
+      });
+      box.querySelector(".option-pill").click();
+    }
+
+    renderPills("p-sizes", product.sizes, v => selectedSize = v);
+    renderPills("p-colors", product.colors, v => selectedColor = v);
+
+    document.getElementById("qty-minus").addEventListener("click", () => {
+      qty = Math.max(1, qty - 1);
+      document.getElementById("qty-value").textContent = qty;
+    });
+    document.getElementById("qty-plus").addEventListener("click", () => {
+      qty = Math.min(99, qty + 1);
+      document.getElementById("qty-value").textContent = qty;
+    });
+
+    document.getElementById("add-to-cart").addEventListener("click", () => {
+      addToCart(product.id, selectedSize, selectedColor, qty);
+      const note = document.getElementById("added-note");
+      note.hidden = false;
+      setTimeout(() => { note.hidden = true; }, 2500);
+    });
+  }
+</script>
+</body>
+</html>
