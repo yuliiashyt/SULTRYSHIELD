@@ -1,12 +1,12 @@
 ---
 name: sultry-identics
-description: Brand identity system for Sultry Shield (Ukrainian protective dancewear brand for heels dancers). Use this skill EVERY time you create or edit anything the brand's audience will see — Instagram posts/captions/stories, site pages and banners, product descriptions, packaging, emails, ads, photoshoot briefs, presentations — even if the user just says "напиши пост", "зроби банер", "текст для сторіс" without naming the brand. It defines the palette, typography, logo, tone of voice, photography rules and the codes to avoid.
+description: Brand identity system for Sultry Shield (Ukrainian brand of protective clothing for heels dancers). Use this skill EVERY time you create or edit anything the brand's audience will see — Instagram posts/captions/stories, site pages and banners, product descriptions, packaging, emails, ads, photoshoot briefs, presentations — even if the user just says "напиши пост", "зроби банер", "текст для сторіс" without naming the brand. It defines the palette, typography, logo, tone of voice, photography rules and the codes to avoid.
 ---
 
 # Sultry Identics — айдентика Sultry Shield
 
-Sultry Shield — український бренд захисного дансвеару для heels-хореографії:
-рукавички з амортизуючими вставками (долоні/лікті), шкарпетки проти натирання
+Sultry Shield — український бренд захисного одягу для heels-хореографії:
+рукавички з м'якими захисними вставками (долоні/лікті), шкарпетки проти натирання
 шнурівкою, колекція Black&Nude. Аудиторія: жінки 22–38, Instagram/TikTok.
 
 **Теза бренду: «Оксамит зовні. Броня всередині.»**
@@ -47,7 +47,9 @@ VirusShop, CRAZE, BVRLY) кричать зі сцени — влада, неон
   це самоповага», «синці — не ціна за красивий партер».
 - Не кажемо: «амортизація», «травмобезпечний», «фіксація суглоба», «захисна
   екіпіровка», «спорядження» (медична/спортивна мова); «королева», «діва»,
-  «богиня» (чужі коди конкурентів); сором'язливі евфемізми про тіло.
+  «богиня» (чужі коди конкурентів); «дансвеар» (засновниця не любить цю
+  кальку — кажи «одяг для танцю» / «одяг для heels-хореографії»);
+  сором'язливі евфемізми про тіло.
 
 ## Графіка і фото
 
