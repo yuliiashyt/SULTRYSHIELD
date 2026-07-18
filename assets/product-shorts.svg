@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Велосипедки Sultry Shield">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1a1114"/>
-      <stop offset="1" stop-color="#2a1b1f"/>
+      <stop offset="0" stop-color="#16100d"/>
+      <stop offset="1" stop-color="#2b1d16"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
-      <stop offset="0" stop-color="#d9b899" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#d9b899" stop-opacity="0"/>
+      <stop offset="0" stop-color="#c8956d" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#c8956d" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="600" height="750" fill="url(#bg)"/>
   <rect width="600" height="750" fill="url(#glow)"/>
-  <g fill="none" stroke="#d9b899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#c8956d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <!-- bike shorts silhouette -->
     <path d="M205 190 l190 0 q14 100 10 170 q-4 62 -12 130 q-40 14 -74 4 l-13 -150 q-6 -22 -12 0 l-13 150 q-34 10 -74 -4 q-8 -68 -12 -130 q-4 -70 10 -170 z"/>
     <!-- high waistband -->
@@ -21,6 +21,6 @@
     <path d="M212 260 q-2 100 4 210" stroke-opacity="0.5" stroke-dasharray="8 8"/>
     <path d="M388 260 q2 100 -4 210" stroke-opacity="0.5" stroke-dasharray="8 8"/>
   </g>
-  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#d9b899" opacity="0.9">ВЕЛОСИПЕДКИ</text>
-  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8d7466">SULTRY SHIELD · P001</text>
+  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#c8956d" opacity="0.9">ВЕЛОСИПЕДКИ</text>
+  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8a6a52">SULTRY SHIELD · P001</text>
 </svg>

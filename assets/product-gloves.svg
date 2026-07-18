@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Рукавички Sultry Shield">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#1a1114"/>
-      <stop offset="1" stop-color="#2a1b1f"/>
+      <stop offset="0" stop-color="#16100d"/>
+      <stop offset="1" stop-color="#2b1d16"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.35" r="0.7">
-      <stop offset="0" stop-color="#d9b899" stop-opacity="0.14"/>
-      <stop offset="1" stop-color="#d9b899" stop-opacity="0"/>
+      <stop offset="0" stop-color="#c8956d" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#c8956d" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="600" height="750" fill="url(#bg)"/>
   <rect width="600" height="750" fill="url(#glow)"/>
-  <g fill="none" stroke="#d9b899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#c8956d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <!-- long glove silhouette -->
     <path d="M255 120 q-14 150 -10 260 q3 90 -12 150 q-10 42 5 78 q14 32 62 32 q48 0 60 -34 q12 -36 4 -80 q-12 -62 -8 -148 q5 -108 -8 -258"/>
     <!-- fingers -->
@@ -27,6 +27,6 @@
     <!-- padded elbow zone -->
     <ellipse cx="292" cy="470" rx="36" ry="50" stroke-opacity="0.7" stroke-dasharray="1 8" stroke-width="5"/>
   </g>
-  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#d9b899" opacity="0.9">РУКАВИЧКИ</text>
-  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8d7466">SULTRY SHIELD · G001</text>
+  <text x="300" y="682" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="6" fill="#c8956d" opacity="0.9">РУКАВИЧКИ</text>
+  <text x="300" y="712" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="4" fill="#8a6a52">SULTRY SHIELD · G001</text>
 </svg>
