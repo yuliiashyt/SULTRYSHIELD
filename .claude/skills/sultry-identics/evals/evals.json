@@ -9,7 +9,7 @@
       "files": [],
       "assertions": [
         "Text is in Ukrainian and addresses the reader informally («ти»)",
-        "Copy contains none of the banned words: амортизація/амортизуюча, травмобезпечний, екіпіровка, спорядження, фіксація суглоба, королева, діва, богиня",
+        "Copy contains none of the banned words: амортизація/амортизуюча, травмобезпечний, екіпіровка, спорядження, фіксація суглоба, королева, діва, богиня, дансвеар",
         "Visual description uses the brand palette (espresso/dark-brown ground, caramel/silk accents or their hex codes) and warm low light; explicitly avoids or does not propose white background / neon",
         "Emotional benefit (freedom, confidence, care for the body) appears before or instead of technical specs"
       ]
