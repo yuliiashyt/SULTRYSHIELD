@@ -7,7 +7,7 @@
  * Поки поле порожнє, кошик пропонує надіслати замовлення в Instagram.
  */
 const CONFIG = {
-  ORDER_ENDPOINT: "",
+  ORDER_ENDPOINT: "https://script.google.com/macros/s/AKfycbw1KkDtGKUTQExdebg7chx0TM0ECaQPQ2oqaqLll2nqaSvZ7Nj1OCOC2rBJmf8_Qbniwg/exec",
   INSTAGRAM_USER: "sultry.shield",
   CONTACT_EMAIL: "general@sultry.shield.com",
 };
