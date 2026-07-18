@@ -9,9 +9,8 @@
  * скрипт додає рядок у аркуш "Замовлення".
  */
 
-// ID таблиці "Sultry Shield — Замовлення" (з її URL:
-// https://docs.google.com/spreadsheets/d/<ОЦЕЙ ID>/edit)
-var SPREADSHEET_ID = "ВСТАВТЕ_ID_ТАБЛИЦІ";
+// Таблиця "Sultry Shield — Замовлення" (лежить у папці general@sultry.shield.com)
+var SPREADSHEET_ID = "15VNamPc8_kfobuFBmMdQTy0EbuZXvHB_L1Lp0tuAyO4";
 var SHEET_NAME = "Замовлення";
 
 var HEADERS = [
@@ -23,7 +22,8 @@ function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
     var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+    // Пишемо в аркуш "Замовлення", а якщо його немає — у перший аркуш таблиці
+    var sheet = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
 
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(HEADERS);

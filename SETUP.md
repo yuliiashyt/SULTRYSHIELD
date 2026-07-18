@@ -17,30 +17,29 @@
 Замовлення записуються в таблицю **«Sultry Shield — Замовлення»** через
 Google Apps Script. Робіть усе з акаунта **general@sultry.shield.com**:
 
-1. Відкрийте таблицю «Sultry Shield — Замовлення» (якщо її ще немає —
-   створіть порожню Google Таблицю з такою назвою в Диску general@).
+1. Відкрийте [таблицю «Sultry Shield — Замовлення»](https://docs.google.com/spreadsheets/d/15VNamPc8_kfobuFBmMdQTy0EbuZXvHB_L1Lp0tuAyO4/edit)
+   (вона вже створена і лежить у спільній папці, заголовки на місці).
 2. У таблиці: **Розширення → Apps Script**.
 3. Видаліть вміст `Code.gs` і вставте код з файлу
-   [`apps-script/Code.gs`](apps-script/Code.gs) цього репозиторію.
-4. У рядку `var SPREADSHEET_ID = "..."` вставте ID таблиці — це довгий
-   код з її адреси: `https://docs.google.com/spreadsheets/d/<ОЦЕЙ_КОД>/edit`.
-5. Натисніть **Розгорнути (Deploy) → Нове розгортання (New deployment)**:
+   [`apps-script/Code.gs`](apps-script/Code.gs) цього репозиторію —
+   ID таблиці там уже вписаний.
+4. Натисніть **Розгорнути (Deploy) → Нове розгортання (New deployment)**:
    - тип: **Веб-застосунок (Web app)**;
    - **Execute as / Виконувати як**: *Me (general@sultry.shield.com)*;
    - **Who has access / Хто має доступ**: **Anyone / Будь-хто** —
      обовʼязково, інакше сайт не зможе надсилати замовлення;
    - підтвердіть дозволи (Google попередить, що застосунок не перевірений —
      натисніть *Advanced → Go to project*).
-6. Скопіюйте **URL веб-застосунку** (закінчується на `/exec`).
-7. Відкрийте його в браузері — має зʼявитись напис
+5. Скопіюйте **URL веб-застосунку** (закінчується на `/exec`).
+6. Відкрийте його в браузері — має зʼявитись напис
    «Sultry Shield order endpoint працює ✓».
-8. У файлі [`js/config.js`](js/config.js) вставте цей URL:
+7. У файлі [`js/config.js`](js/config.js) вставте цей URL:
 
    ```js
    ORDER_ENDPOINT: "https://script.google.com/macros/s/…/exec",
    ```
 
-9. Закомітьте зміну і дочекайтесь деплою. Зробіть тестове замовлення —
+8. Закомітьте зміну і дочекайтесь деплою. Зробіть тестове замовлення —
    у таблиці має зʼявитися рядок.
 
 Поки `ORDER_ENDPOINT` порожній, кошик працює у резервному режимі:
