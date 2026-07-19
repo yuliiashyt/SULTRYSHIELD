@@ -67,7 +67,7 @@ VirusShop, CRAZE, BVRLY) кричать зі сцени — влада, неон
 ## Мова та факти
 
 Основна мова — українська. Ціни в грн. Сайт: sultryshield.com
-(github.io/SULTRYSHIELD до підключення домену). Email: general@sultry.shield.com.
+(github.io/SULTRYSHIELD до підключення домену). Email: general@sultry.shield.com. Instagram: @sultryshield.
 Продукти лінійки: рукавички (G001), шкарпетки (S001), болеро (B001),
 велосипедки (P001), боді (BD001).
 
