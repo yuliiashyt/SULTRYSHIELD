@@ -1,14 +1,14 @@
-<title>Sultry Shield — Малахіт</title>
+<title>Sultry Shield — Смерека</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
 <style>
 :root{
-  --malachite:#154C39;   /* малахіт — ґрунт */
-  --malachite-hi:#103F2F;/* картки — глибше за ґрунт, щоб товар виступав */
-  --seam:#33755A;        /* шов, лінії */
+  --smereka:#0E3628;     /* смерека — ґрунт */
+  --smereka-hi:#154232;  /* картки — світліші за ґрунт (на темнішому тлі так читніше) */
+  --seam:#2F6B50;        /* шов, лінії */
   --porcelain:#F4E9E6;   /* порцеляна — світло */
-  --rose:#E0A29B;        /* пудрова троянда — акцент */
+  --rose:#D0968F;        /* приглушена троянда — акцент */
   --text:#F2F7F3;
   --muted:#AFC9BE;
   --serif:"Spectral",Georgia,"Times New Roman",serif;
@@ -17,7 +17,7 @@
   --spine:clamp(20px,5vw,40px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--malachite);color:var(--text);font-family:var(--sans);
+body{background:var(--smereka);color:var(--text);font-family:var(--sans);
      font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -33,7 +33,7 @@ a{color:inherit;text-decoration:none}
 .band::before{               /* маркер на шві навпроти секції */
   content:"";position:absolute;top:clamp(50px,6vw,82px);left:calc(var(--spine) - 5px);
   width:11px;height:11px;border-radius:50%;
-  border:1px solid var(--seam);background:var(--malachite)}
+  border:1px solid var(--seam);background:var(--smereka)}
 .band--zone::before{         /* товщає там, де мова про захищену зону */
   width:15px;height:23px;left:calc(var(--spine) - 7px);border-radius:8px;
   border:2px dotted var(--rose);opacity:.75}
@@ -55,7 +55,7 @@ p{max-width:62ch}
 .muted{color:var(--muted)}
 
 /* ---------- Шапка ---------- */
-.hdr{position:sticky;top:0;z-index:60;background:rgba(21,76,57,.92);
+.hdr{position:sticky;top:0;z-index:60;background:rgba(14,54,40,.92);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--seam)}
 .hdr__in{max-width:1180px;margin:0 auto;padding:0 var(--gut) 0 calc(var(--spine) + 34px);
   min-height:66px;display:flex;align-items:center;gap:26px}
@@ -84,10 +84,10 @@ p{max-width:62ch}
 .btn{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.19em;
   text-transform:uppercase;padding:15px 30px;border:1px solid var(--porcelain);
   cursor:pointer;transition:background .2s,color .2s;display:inline-block}
-.btn--fill{background:var(--porcelain);color:var(--malachite)}
+.btn--fill{background:var(--porcelain);color:var(--smereka)}
 .btn--fill:hover{background:var(--rose);border-color:var(--rose)}
 .btn--line{background:none;color:var(--porcelain)}
-.btn--line:hover{background:rgba(224,162,155,.11)}
+.btn--line:hover{background:rgba(208,150,143,.12)}
 .arm{width:100%;height:auto}
 .arm .lim{fill:none;stroke:var(--porcelain);stroke-width:2.1;
   stroke-linecap:round;stroke-linejoin:round}
@@ -112,8 +112,8 @@ p{max-width:62ch}
 .head h2{margin-top:12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));
   gap:clamp(14px,1.6vw,22px);margin-top:42px}
-.card{background:var(--malachite-hi);border:1px solid var(--seam);
-  border-left:1px dashed rgba(224,162,155,.5);  /* лінія згину лекала */
+.card{background:var(--smereka-hi);border:1px solid var(--seam);
+  border-left:1px dashed rgba(208,150,143,.5);  /* лінія згину лекала */
   display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .card:hover{border-color:var(--rose);transform:translateY(-3px)}
 .card__art{aspect-ratio:4/5;display:grid;place-items:center;padding:22px;
@@ -176,7 +176,7 @@ p{max-width:62ch}
   .foot__grid{grid-template-columns:1fr;gap:26px}
   .burger{display:flex}
   .nav{position:fixed;inset:66px 0 auto;flex-direction:column;gap:0;
-    background:var(--malachite);border-bottom:1px solid var(--seam);padding:6px 0 14px}
+    background:var(--smereka);border-bottom:1px solid var(--seam);padding:6px 0 14px}
   .nav[hidden]{display:none}
   .nav a{padding:15px var(--gut);font-size:.86rem;border-top:1px solid var(--seam)}
 }
