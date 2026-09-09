@@ -1,0 +1,522 @@
+<title>Sultry Shield — Смерека</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300&family=Manrope:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --smereka:#0E3628;     /* смерека — ґрунт */
+  --smereka-hi:#154232;  /* картки — світліші за ґрунт (на темнішому тлі так читніше) */
+  --seam:#2F6B50;        /* шов, лінії */
+  --porcelain:#F4E9E6;   /* порцеляна — світло */
+  --rose:#D0968F;        /* приглушена троянда — акцент */
+  --text:#F2F7F3;
+  --muted:#AFC9BE;
+  --serif:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:"Manrope","Segoe UI",system-ui,sans-serif;
+  --gut:clamp(20px,5vw,40px);
+  --spine:clamp(20px,5vw,40px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--smereka);color:var(--text);font-family:var(--sans);
+     font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--porcelain);outline-offset:3px;border-radius:2px}
+
+/* ---------- ШОВ ЗАХИСТУ: структурний хребет сторінки ---------- */
+.page{position:relative}
+.page::before{               /* безперервний пунктирний шов */
+  content:"";position:absolute;top:0;bottom:0;left:var(--spine);width:1px;
+  background:repeating-linear-gradient(to bottom,var(--seam) 0 3px,transparent 3px 12px);
+  pointer-events:none}
+.band{position:relative;padding:clamp(50px,6vw,82px) 0}
+.band::before{               /* маркер на шві навпроти секції */
+  content:"";position:absolute;top:clamp(50px,6vw,82px);left:calc(var(--spine) - 5px);
+  width:11px;height:11px;border-radius:50%;
+  border:1px solid var(--seam);background:var(--smereka)}
+.band--zone::before{         /* товщає там, де мова про захищену зону */
+  width:15px;height:23px;left:calc(var(--spine) - 7px);border-radius:8px;
+  border:2px dotted var(--rose);opacity:.75}
+.wrap{max-width:1180px;margin:0 auto;
+      padding-left:calc(var(--spine) + 34px);padding-right:var(--gut)}
+
+/* ---------- Типографіка ---------- */
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:300;line-height:1.1;
+  letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.4vw,4.55rem)}
+h2{font-size:clamp(1.95rem,3.9vw,2.9rem)}
+h3{font-size:clamp(1.2rem,2vw,1.42rem);line-height:1.22}
+em{font-style:italic}
+.eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:600;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--rose)}
+.lead{font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.08rem,1.7vw,1.32rem);line-height:1.58;color:#DCEBE3;max-width:46ch}
+p{max-width:62ch}
+.muted{color:var(--muted)}
+
+/* ---------- Шапка ---------- */
+.hdr{position:sticky;top:0;z-index:60;background:rgba(14,54,40,.92);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--seam)}
+.hdr__in{max-width:1180px;margin:0 auto;padding:0 var(--gut) 0 calc(var(--spine) + 34px);
+  min-height:66px;display:flex;align-items:center;gap:26px}
+.mark{display:flex;align-items:center;gap:11px;margin-right:auto;min-width:0}
+.mark svg{width:25px;height:29px;flex:none}
+.mark b{font-family:var(--serif);font-weight:400;font-size:1.06rem;
+  letter-spacing:.2em;white-space:nowrap}
+.nav{display:flex;gap:26px}
+.nav a{font-size:.78rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);padding:9px 2px;transition:color .18s}
+.nav a:hover{color:var(--porcelain)}
+.bag{display:flex;flex:none;align-items:center;gap:9px;font-size:.78rem;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;padding:9px 2px}
+.bag i{font-style:normal;min-width:21px;height:21px;display:grid;place-items:center;
+  border:1px solid var(--seam);border-radius:50%;font-size:.68rem;color:var(--muted)}
+.burger{display:none;flex:none;width:44px;height:44px;background:none;border:0;
+  cursor:pointer;color:var(--text);align-items:center;justify-content:center}
+.burger svg{width:20px;height:14px}
+
+/* ---------- Герой ---------- */
+.hero{padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(56px,7vw,96px)}
+.hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,64px);
+  align-items:center}
+.hero h1{margin:20px 0 26px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px}
+.btn{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.19em;
+  text-transform:uppercase;padding:15px 30px;border:1px solid var(--porcelain);
+  cursor:pointer;transition:background .2s,color .2s;display:inline-block}
+.btn--fill{background:var(--porcelain);color:var(--smereka)}
+.btn--fill:hover{background:var(--rose);border-color:var(--rose)}
+.btn--line{background:none;color:var(--porcelain)}
+.btn--line:hover{background:rgba(208,150,143,.12)}
+.arm{width:100%;height:auto}
+.arm .lim{fill:none;stroke:var(--porcelain);stroke-width:2.1;
+  stroke-linecap:round;stroke-linejoin:round}
+.arm .floor{stroke:var(--seam);stroke-width:1.5}
+.arm .zone{fill:none;stroke:var(--rose);stroke-width:3.4;
+  stroke-dasharray:1 8;stroke-linecap:round}
+.arm .lead-line{stroke:var(--seam);stroke-width:1;fill:none}
+.arm text{font-family:var(--sans);font-size:12px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;fill:var(--muted)}
+
+/* ---------- Зони ---------- */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,46px);
+  margin-top:46px}
+.zone-card h3{margin-bottom:9px}
+.zone-card p{font-size:.94rem;color:var(--muted);max-width:34ch}
+.zone-card__tag{font-size:.64rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--rose);display:block;margin-bottom:13px}
+
+/* ---------- Каталог ---------- */
+.head{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:26px;flex-wrap:wrap;margin-bottom:12px}
+.head h2{margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));
+  gap:clamp(14px,1.6vw,22px);margin-top:42px}
+.card{background:var(--smereka-hi);border:1px solid var(--seam);
+  border-left:1px dashed rgba(208,150,143,.5);  /* лінія згину лекала */
+  display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--rose);transform:translateY(-3px)}
+.card__art{aspect-ratio:4/5;display:grid;place-items:center;padding:22px;
+  border-bottom:1px solid var(--seam)}
+.card__art svg{width:100%;height:100%;fill:none;stroke:var(--rose);
+  stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.card__body{padding:17px 19px 20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.06rem}  /* ціни вирівнює flex, не фіксована висота */
+.card__meta{margin-top:auto;padding-top:15px;display:flex;
+  flex-direction:column;align-items:flex-start;gap:5px}
+.card__price{font-family:var(--serif);font-size:1.2rem;color:var(--porcelain);
+  white-space:nowrap}
+.card__col{font-size:.63rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+
+/* ---------- Історія ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4.5vw,72px)}
+.quote{border-left:2px solid var(--rose);padding-left:24px;margin:26px 0 0}
+.quote p{font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(1.15rem,2vw,1.42rem);line-height:1.44;color:var(--porcelain)}
+.quote cite{display:block;margin-top:13px;font-family:var(--sans);font-style:normal;
+  font-size:.68rem;font-weight:600;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--muted)}
+.vals{display:grid;gap:24px;align-content:start}
+.vals div{border-top:1px solid var(--seam);padding-top:15px}
+.vals h3{font-size:1.06rem;margin-bottom:6px}
+.vals p{font-size:.91rem;color:var(--muted);max-width:38ch}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:36px;max-width:760px}
+.faq details{border-top:1px solid var(--seam)}
+.faq details:last-child{border-bottom:1px solid var(--seam)}
+.faq summary{list-style:none;cursor:pointer;padding:19px 34px 19px 0;position:relative;
+  font-family:var(--serif);font-size:1.1rem;font-weight:400}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;
+  border-right:1px solid var(--rose);border-bottom:1px solid var(--rose);
+  transform:translateY(-70%) rotate(45deg);transition:transform .22s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq details p{padding:0 0 19px;color:var(--muted);font-size:.95rem}
+
+/* ---------- Підвал ---------- */
+.foot{border-top:1px solid var(--seam);padding:46px 0 38px;margin-top:26px}
+.foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.foot h4{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:13px;font-family:var(--sans)}
+.foot a,.foot p{font-size:.9rem;color:var(--muted);display:block;margin-bottom:7px}
+.foot a:hover{color:var(--porcelain)}
+.foot__bot{margin-top:34px;padding-top:19px;border-top:1px solid var(--seam);
+  font-size:.78rem;color:var(--muted)}
+
+/* ---------- Адаптив ---------- */
+@media (max-width:900px){
+  .hdr__in{gap:14px}
+  .mark b{font-size:.92rem;letter-spacing:.15em}
+  .hero__grid{grid-template-columns:1fr;gap:38px}
+  .hero__art{max-width:296px;margin:0 auto}
+  .zones{grid-template-columns:1fr;gap:26px}
+  .story{grid-template-columns:1fr}
+  .foot__grid{grid-template-columns:1fr;gap:26px}
+  .burger{display:flex}
+  .nav{position:fixed;inset:66px 0 auto;flex-direction:column;gap:0;
+    background:var(--smereka);border-bottom:1px solid var(--seam);padding:6px 0 14px}
+  .nav[hidden]{display:none}
+  .nav a{padding:15px var(--gut);font-size:.86rem;border-top:1px solid var(--seam)}
+}
+@media (min-width:901px){ .nav{display:flex!important} }
+@media (max-width:640px){
+  .mark b{display:none}          /* лишаємо монограму — на вузькому вона впізнавана */
+  .bag{gap:7px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .card:hover{transform:none}
+}
+</style>
+
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 64 74" aria-hidden="true" fill="none" stroke="#F4E9E6"
+           stroke-width="3" stroke-linejoin="round">
+        <path d="M32 4 L58 13 q0 28 -11 41 q-7 9 -15 11 q-8 -2 -15 -11 Q6 41 6 13 Z"/>
+        <path d="M41 22 q-9 -7 -15 0 q-7 7 2 12 l9 5 q9 6 2 12 q-7 7 -15 0"
+              stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <b>SULTRY SHIELD</b>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav"
+            aria-label="Відкрити меню">
+      <svg viewBox="0 0 20 14" aria-hidden="true" stroke="currentColor" stroke-width="1.6"
+           stroke-linecap="round"><path d="M0 1h20M0 7h20M0 13h20"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Основне">
+      <a href="#catalog">Каталог</a>
+      <a href="#story">Бренд</a>
+      <a href="#faq">Питання</a>
+    </nav>
+    <a class="bag" href="#catalog">Кошик <i>0</i></a>
+  </div>
+</header>
+
+<div class="page" id="top">
+<main>
+
+  <!-- ГЕРОЙ: рука зустрічає підлогу -->
+  <section class="band hero band--zone">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Оксамит зовні · Броня всередині</p>
+        <h1>Партер не має коштувати тобі <em>шкіри</em>.</h1>
+        <p class="lead">Долоні, лікті, ділянка під шнурівкою — три місця, якими
+          heels-хореографія розраховується з тілом. Ми вдягаємо саме їх, і робимо
+          це так, щоб хотілося показати, а не сховати.</p>
+        <div class="hero__cta">
+          <a class="btn btn--fill" href="#catalog">Дивитися каталог</a>
+          <a class="btn btn--line" href="#story">Як це почалося</a>
+        </div>
+      </div>
+      <div class="hero__art">
+        <svg class="arm" viewBox="0 0 500 600" role="img"
+             aria-label="Рука танцівниці впирається долонею в підлогу; пунктиром позначені захищені зони — долоня і лікоть">
+          <!-- підлога -->
+          <line class="floor" x1="14" y1="548" x2="470" y2="548"/>
+          <!-- рука: зовнішній контур від плеча до зап'ястка -->
+          <path class="lim" d="M401 0 Q385 158 336 300 Q300 420 262 508"/>
+          <!-- внутрішній контур -->
+          <path class="lim" d="M343 0 Q331 156 286 296 Q252 415 214 500"/>
+          <!-- долоня, що лягає на підлогу -->
+          <path class="lim" d="M262 508 Q252 536 224 546"/>
+          <path class="lim" d="M214 500 Q196 522 168 534"/>
+          <!-- пальці, розкриті по підлозі -->
+          <path class="lim" d="M168 534 Q128 528 96 534"/>
+          <path class="lim" d="M172 541 Q132 538 100 546"/>
+          <path class="lim" d="M178 548 Q140 548 110 556"/>
+          <path class="lim" d="M186 553 Q156 558 132 564"/>
+          <!-- великий палець -->
+          <path class="lim" d="M224 546 Q216 563 199 567"/>
+          <!-- захищені зони: мова лекала, не медицини -->
+          <ellipse class="zone" cx="180" cy="543" rx="56" ry="26"
+                   transform="rotate(-8 180 543)"/>
+          <ellipse class="zone" cx="305" cy="300" rx="36" ry="50"
+                   transform="rotate(20 305 300)"/>
+          <!-- підписи з виносками просто від межі зони -->
+          <path class="lead-line" d="M124 538 L124 498 L80 498"/>
+          <text x="80" y="490">долоня</text>
+          <path class="lead-line" d="M344 300 L404 300 L404 278"/>
+          <text x="404" y="270">лікоть</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЗОНИ -->
+  <section class="band band--zone" aria-labelledby="zones-h">
+    <div class="wrap">
+      <p class="eyebrow">Три місця</p>
+      <h2 id="zones-h">Де болить насправді</h2>
+      <div class="zones">
+        <article class="zone-card">
+          <span class="zone-card__tag">Долоні</span>
+          <h3>Партер б'є першими руками</h3>
+          <p>М'яка вставка зустрічає підлогу замість твоєї долоні — саме там,
+             де синці з'являються найшвидше.</p>
+        </article>
+        <article class="zone-card">
+          <span class="zone-card__tag">Лікті</span>
+          <h3>Опора, яку не бережуть</h3>
+          <p>Другий шар тканини у зоні ліктя: перехід у партер перестає бути
+             вибором між красою руху й цілою шкірою.</p>
+        </article>
+        <article class="zone-card">
+          <span class="zone-card__tag">Під шнурівкою</span>
+          <h3>Червоні сліди після кожного заняття</h3>
+          <p>Шкарпетки зі вставкою у верхній частині стають бар'єром між шкірою
+             і шнурівкою хілсів.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАТАЛОГ -->
+  <section class="band" id="catalog" aria-labelledby="cat-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Колекція Black&amp;Nude</p>
+          <h2 id="cat-h">Каталог</h2>
+        </div>
+        <p class="muted" style="font-size:.9rem;max-width:34ch">Два кольори: чорний
+          і нюд. Оплата при отриманні або карткою, доставка Новою поштою.</p>
+      </div>
+      <div class="grid">
+
+        <a class="card" href="#">
+          <div class="card__art">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <path d="M128 60 q-7 75 -5 130 q1 45 -6 75 q-5 21 3 39 q7 16 31 16
+                       q24 0 30 -17 q6 -18 2 -40 q-6 -31 -4 -74 q3 -54 -4 -129"/>
+              <path d="M131 59 q3 -23 7 -26 q5 -3 6 4 l2 22"/>
+              <path d="M146 58 q1 -29 6 -31 q6 -2 6 6 l1 25"/>
+              <path d="M159 58 q2 -25 7 -26 q5 -1 4 6 l-1 21"/>
+              <path d="M170 61 q5 -17 9 -17 q5 1 2 9 l-5 16"/>
+              <path d="M124 125 q28 11 53 0" stroke-dasharray="2 9"/>
+              <ellipse cx="150" cy="88" rx="17" ry="21" stroke-dasharray="1 8"/>
+              <ellipse cx="146" cy="235" rx="18" ry="25" stroke-dasharray="1 8"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3>Рукавички Sultry Shield</h3>
+            <div class="card__meta">
+              <span class="card__price">1 490 ₴</span>
+              <span class="card__col">чорний · нюд</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div class="card__art">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <path d="M122 75 l0 105 q0 20 -14 33 q-17 15 -11 35 q6 21 31 22
+                       q23 1 45 -15 q23 -17 22 -37 q-1 -18 -20 -22 q-13 -3 -13 -18 l0 -103"/>
+              <path d="M122 75 q20 9 40 0"/>
+              <path d="M122 86 q20 9 40 0" stroke-dasharray="2 9"/>
+              <path d="M122 105 q20 9 40 0 l0 33 q-20 9 -40 0 z" stroke-dasharray="1 8"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3>Шкарпетки під шнурівку хілсів</h3>
+            <div class="card__meta">
+              <span class="card__price">590 ₴</span>
+              <span class="card__col">чорний · нюд</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div class="card__art">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <path d="M150 95 q-26 -3 -39 12 q-12 14 -12 39 l0 46 q25 13 51 13
+                       q26 0 51 -13 l0 -46 q0 -25 -12 -39 q-13 -15 -39 -12 z"/>
+              <path d="M129 98 q21 30 42 0"/>
+              <path d="M99 146 q-22 13 -28 46 q-5 28 3 56 q13 6 24 -1 q2 -33 7 -60"/>
+              <path d="M201 146 q22 13 28 46 q5 28 -3 56 q-13 6 -24 -1 q-2 -33 -7 -60"/>
+              <ellipse cx="82" cy="210" rx="10" ry="15" stroke-dasharray="1 8"/>
+              <ellipse cx="218" cy="210" rx="10" ry="15" stroke-dasharray="1 8"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3>Болеро Black&amp;Nude</h3>
+            <div class="card__meta">
+              <span class="card__price">1 290 ₴</span>
+              <span class="card__col">чорний · нюд</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div class="card__art">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <path d="M102 95 l95 0 q7 50 5 85 q-2 31 -6 65 q-20 7 -37 2 l-6 -75
+                       q-3 -11 -6 0 l-7 75 q-17 5 -37 -2 q-4 -34 -6 -65 q-2 -35 5 -85 z"/>
+              <path d="M102 95 q48 15 95 0"/>
+              <path d="M103 107 q47 15 93 0" stroke-dasharray="2 9"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3>Велосипедки Black&amp;Nude</h3>
+            <div class="card__meta">
+              <span class="card__price">1 190 ₴</span>
+              <span class="card__col">чорний · нюд</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div class="card__art">
+            <svg viewBox="0 0 300 400" aria-hidden="true">
+              <path d="M112 75 q15 13 38 13 q22 0 37 -13 q9 32 5 64 q-4 29 -1 58
+                       q3 31 -8 59 q-15 8 -33 8 q-19 0 -34 -8 q-11 -28 -8 -59
+                       q3 -29 -1 -58 q-4 -32 5 -64 z"/>
+              <path d="M129 81 q21 58 42 0"/>
+              <path d="M119 196 q31 13 62 0" stroke-dasharray="2 9"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3>Боді Black&amp;Nude</h3>
+            <div class="card__meta">
+              <span class="card__price">1 690 ₴</span>
+              <span class="card__col">чорний · нюд</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ІСТОРІЯ -->
+  <section class="band" id="story" aria-labelledby="story-h">
+    <div class="wrap story">
+      <div>
+        <p class="eyebrow">Про бренд</p>
+        <h2 id="story-h">Почалося з синця</h2>
+        <p class="lead" style="margin-top:20px">Sultry Shield придумала танцівниця,
+          яка втомилася замазувати коліна тональним і вдавати, що партер дається
+          легко. Захист у цій категорії або спортивний, або медичний — а хотілося
+          такого, який не соромно лишити в кадрі.</p>
+        <blockquote class="quote">
+          <p>Я не хотіла вибирати між «красиво» і «ціло». Тому зробила річ,
+             у якій це одне й те саме.</p>
+          <cite>Юлія, засновниця</cite>
+        </blockquote>
+      </div>
+      <div class="vals">
+        <div>
+          <h3>Свобода проявлення</h3>
+          <p>Право виражати сексуальність через рух — без сорому й без шкоди
+             для здоров'я.</p>
+        </div>
+        <div>
+          <h3>Усвідомленість тіла</h3>
+          <p>Чесна розмова про реальні травми замість маркетингу заради маркетингу.</p>
+        </div>
+        <div>
+          <h3>Турбота як самоповага</h3>
+          <p>Берегти своє тіло — не про обережність. Ми робимо цю турботу бажаною.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <p class="eyebrow">Питання</p>
+      <h2 id="faq-h">Коротко про головне</h2>
+      <div class="faq">
+        <details open>
+          <summary>Рукавички сповзатимуть під час танцю?</summary>
+          <p>Ні. Силіконова смужка на передпліччі тримає їх за принципом панчохи —
+             без застібок і липучок, які чіпляються за одяг.</p>
+        </details>
+        <details>
+          <summary>Як обрати розмір?</summary>
+          <p>Розміри S, M, L для одягу і 36–38 / 39–41 для шкарпеток. Якщо вагаєтесь
+             між двома — напишіть нам в Instagram, підкажемо за обхватом.</p>
+        </details>
+        <details>
+          <summary>Як оплатити й отримати?</summary>
+          <p>Доставка Новою поштою по Україні. Оплата карткою або при отриманні.
+             Відправляємо протягом двох робочих днів.</p>
+        </details>
+        <details>
+          <summary>Чи можна прати?</summary>
+          <p>Так, у делікатному режимі до 30 °C без відбілювача. Вставки прання
+             не бояться.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h4>Sultry Shield</h4>
+        <p style="max-width:30ch">Одяг, що береже тебе в heels-хореографії.
+           Створено танцівницею в Києві.</p>
+      </div>
+      <div>
+        <h4>Магазин</h4>
+        <a href="#catalog">Каталог</a>
+        <a href="#faq">Доставка й оплата</a>
+        <a href="#faq">Розміри</a>
+      </div>
+      <div>
+        <h4>Зв'язок</h4>
+        <a href="https://www.instagram.com/sultryshield">Instagram</a>
+        <a href="mailto:general@sultry.shield.com">general@sultry.shield.com</a>
+      </div>
+    </div>
+    <p class="foot__bot">© 2026 Sultry Shield · sultryshield.com</p>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById("burger"), n=document.getElementById("nav");
+  function close(){ b.setAttribute("aria-expanded","false"); n.hidden=true;
+                    b.setAttribute("aria-label","Відкрити меню"); }
+  function sync(){ if(window.innerWidth>900){ n.hidden=false; } else if(b.getAttribute("aria-expanded")!=="true"){ n.hidden=true; } }
+  b.addEventListener("click",function(){
+    var open=b.getAttribute("aria-expanded")==="true";
+    b.setAttribute("aria-expanded",String(!open));
+    b.setAttribute("aria-label",open?"Відкрити меню":"Закрити меню");
+    n.hidden=open;
+  });
+  n.addEventListener("click",function(e){ if(e.target.tagName==="A"&&window.innerWidth<=900) close(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&window.innerWidth<=900) close(); });
+  window.addEventListener("resize",sync); sync();
+})();
+</script>
